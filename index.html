@@ -3,14 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Kalkulator BMI</title>
+    <link rel="stylesheet" href="style.css" type="text/css"/>	
+    <script src="scr.js"></script>"
 </head>
+
 <body>
-    <h1>Witaj grzebiecie!</h1>
-    <h2>to co robimy ?
-    </h2>
-    <div>xd</div>
-    
-    <script src="js/index.js"></script>
+    <div id="container">
+
+        <div id="title">Oblicz swój wskaźnik <b>BMI!<b></div>
+
+    <div id="weight">Podaj masę ciała:   <input type="text" id="form1" placeholder="Masa [kg]">
+    </div>
+    <div id="height">Podaj swój wzrost:
+        <input type="text" id="form2" placeholder="Wzrost [cm]">
+    </div>
+
+    <div id="confirm">
+        <button type="button" id="btn1" onclick="solve()">Oblicz!</button> 
+    </div>
+
+    <div id="results"></div>
+
+    <div id="interpretation">Wypełnij puste pola aby poznać swój wynik i jego interpretację.</div>
+
+
+    </div>
+ 
 </body>
 </html>
