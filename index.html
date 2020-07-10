@@ -4,31 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kalkulator BMI</title>
-    <link rel="stylesheet" href="style.css" type="text/css"/>	
-    <script src="scr.js"></script>"
+    <link rel="stylesheet" href="css/main.css" type="text/css"/>	
+    <script src="js/index.js"></script>"
 </head>
 
 <body>
-    <div id="container">
-
-        <div id="title">Oblicz swój wskaźnik <b>BMI!<b></div>
-
-    <div id="weight">Podaj masę ciała:   <input type="text" id="form1" placeholder="Masa [kg]">
+    <section class="container">
+        <header class="title">Oblicz swój wskaźnik <b>BMI!<b></header>
+    <div class="value-weight">Podaj masę ciała: <input type="number" placeholder="Masa [kg]">
     </div>
-    <div id="height">Podaj swój wzrost:
-        <input type="text" id="form2" placeholder="Wzrost [cm]">
+    <div class="value-height">Podaj swój wzrost:
+        <input type="number" placeholder="Wzrost [cm]">
     </div>
-
     <div id="confirm">
         <button type="button" id="btn1" onclick="solve()">Oblicz!</button> 
     </div>
-
     <div id="results"></div>
-
-    <div id="interpretation">Wypełnij puste pola aby poznać swój wynik i jego interpretację.</div>
-
-
-    </div>
- 
+    <div class="interpretation">Wypełnij puste pola aby poznać swój wynik i jego interpretację.</div>
+</section>
 </body>
 </html>
