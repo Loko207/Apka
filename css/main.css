@@ -1,92 +1,109 @@
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
-}
-@keyframes slide{
-    from {
-        opacity: 0;
-        transform: translateX(100px);
-        width: 0;
-    }
-    to {
-        width: 450px;
-        opacity: 1;
-        transform: translateX(0);
-    }
-
-}
-@keyframes inside{
-    0%{
-        opacity: 0;
-    }
-    90%{
-        opacity:0;
-    }
-    100%{
-        opacity: 1;
-    }
-}
-html,body {
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-  
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
 }
 
+@keyframes slide {
+	from {
+		opacity: 0;
+		transform: scale(0);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+@keyframes show {
+	from {
+		opacity: 0;
+		transform: translateX(200px) scale(0);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0) scale(0.7);
+	}
+}
+@keyframes show-first-child {
+	0% {
+		opacity: 0;
+		transform: translateX(-200px) scale(0);
+	}
+	1% {
+		transform: translateX(-200px) scale(0) rotate(180deg);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0) scale(0.7) rotate(180deg);
+	}
+}
+
+html,
+body {
+	background-color: grey;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 5;
+}
 
 .container {
-    width:450px;
-    height: 600px;
+	width: 450px;
+	min-height: 450px;
 	/* margin-left:auto;
 	margin-right:auto; */
-    background: rgb(48, 54, 68);
-   /*  margin-top: 20px; */
-    border-radius: 30px;
-    animation-name: slide;
-    animation-duration: 3s;
-    
- 
+	background: rgb(48, 54, 68);
+	/*  margin-top: 20px; */
+	border-radius: 30px;
+	animation: slide 3s ease-out both;
+	padding: 10px;
+	position: relative;
+}
+
+a:first-child {
+	transform: rotate(180deg) scale(0.7);
+	animation: show-first-child 3s ease-out;
+}
+a {
+	transform: scale(0.7);
+	transition: transform 1s ease-in-out;
+	animation: show 3s ease-out;
+}
+a:hover {
+	transform: scale(1);
+	cursor: pointer;
+}
+a:first-child:hover {
+	transform: rotate(180deg) scale(1);
 }
 
 .title {
-   /*  background-color: red; */
-    height: 35px;
-    font-size: 27px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    text-align: center;
-    padding-top: 3px;
-    color: white;
-    animation-name: inside;
-    animation-duration: 3s;
- 
+	/*  background-color: red; */
+	height: 35px;
+	font-size: 27px;
+	font-weight: 500;
+	letter-spacing: 1px;
+	text-align: center;
+	padding-top: 3px;
+	color: white;
 }
-.value-weight,
-.value-height   {
-    
-    /* background-color: green; */
-    height: 35px;
-    font-size: 20px;
-    font-weight: 300;
-    letter-spacing: 1px;
-    text-align: left;
-    padding-top: 3px;
-    padding-left: 7px;
-    color: white;
-    /* white-space: pre-wrap; */
-    padding: 7px;
-    animation-name: inside;
-    animation-duration: 3s;
 
-    
+.value-weight,
+.value-height {
+	/* background-color: green; */
+	height: 35px;
+	font-size: 20px;
+	font-weight: 300;
+	letter-spacing: 1px;
+	text-align: left;
+	padding-top: 3px;
+	padding-left: 7px;
+	color: white;
+	/* white-space: pre-wrap; */
+	padding: 7px;
 }
-.value-weight {
-   /*  white-space: pre-wrap; */
-    /* background-color: blue; */
-}
+
 /* #height{
     background-color: green;
     height: 35px;
@@ -100,18 +117,14 @@ html,body {
     padding: 7px;
 } */
 
-.value-height>input,
-.value-weight>input {
-    background-color: pink;
-    color:red;
-    text-align: center;
-    height: 20px;
-    font-size: 20px;
-    float: right;
-    animation-name: inside;
-    animation-duration: 3s;
-    
-    
+.value-height > input,
+.value-weight > input {
+	background-color: pink;
+	color: red;
+	text-align: center;
+	height: 20px;
+	font-size: 20px;
+	float: right;
 }
 
 /* #form2 {
@@ -119,48 +132,51 @@ html,body {
     color:red;
     text-align: center;
     height: 20px;
-    font-size: 20px; 
+    font-size: 20px;
 } */
 
 #confirm {
-   /*  background-color:violet; */
-    text-align: center;
-    height: 35px;
-    font-size: 20px; 
+	/*  background-color:violet; */
+	text-align: center;
+	height: 35px;
+	font-size: 20px;
 }
 
 #btn1 {
-    background-color: yellow;
-    width: 250px;
-    height: 35px;
-    font-size: 20px; 
-    font-weight: 700;
-    cursor: pointer;
-    animation-name: inside;
-    animation-duration: 3s;
+	background-color: yellow;
+	width: 250px;
+	height: 35px;
+	font-size: 20px;
+	font-weight: 700;
+	cursor: pointer;
 }
-#btn1:hover{
-    opacity: .9;
+
+#btn1:hover {
+	opacity: 0.8;
 }
-#btn1:focus{
-    background-color: blue;
+
+#btn1:focus {
+	background-color: blue;
 }
 
 #results {
-    /* background-color: teal; */
-    width: auto;
-    height: 35px;
-    font-weight: 500;
-    font-size: 28px;
-    text-align: center;
-
+	/* background-color: teal; */
+	width: auto;
+	height: 35px;
+	font-weight: 500;
+	font-size: 28px;
+	text-align: center;
+	margin-top: 20px;
 }
 
 .interpretation {
-    font-size: 25px;
-    text-align: center;
-    letter-spacing: 0.9px;
-    margin: 5px;
-    animation-name: inside;
-    animation-duration: 3s;
+	font-weight: bold;
+	font-size: 25px;
+	min-width: 450px;
+	height: 200px;
+	text-align: center;
+	letter-spacing: 0.9px;
+	margin: 5px;
+	display: table-cell;
+	vertical-align: middle;
 }
