@@ -40,7 +40,8 @@ input[type="number"]::-webkit-outer-spin-button {
 
 html,
 body {
-	background-color: grey;
+	background-color: #303030;
+	font-family: 'Lato', sans-serif;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -51,10 +52,7 @@ body {
 .container {
 	width: 450px;
 	min-height: 450px;
-	/* margin-left:auto;
-	margin-right:auto; */
 	background: rgb(48, 54, 68);
-	/*  margin-top: 20px; */
 	border-radius: 30px;
 	animation: slide 3s ease-out both;
 	padding: 10px;
@@ -79,7 +77,6 @@ a:first-child:hover {
 }
 
 .title {
-	/*  background-color: red; */
 	height: 35px;
 	font-size: 27px;
 	font-weight: 500;
@@ -91,7 +88,6 @@ a:first-child:hover {
 
 .value-weight,
 .value-height {
-	/* background-color: green; */
 	height: 35px;
 	font-size: 20px;
 	font-weight: 300;
@@ -100,22 +96,10 @@ a:first-child:hover {
 	padding-top: 3px;
 	padding-left: 7px;
 	color: white;
-	/* white-space: pre-wrap; */
 	padding: 7px;
 }
 
-/* #height{
-    background-color: green;
-    height: 35px;
-    font-size: 20px;
-    font-weight: 300;
-    letter-spacing: 1px;
-    text-align: left;
-    padding-top: 3px;
-    padding-left: 7px;
-    color: white;
-    padding: 7px;
-} */
+
 
 .value-height > input,
 .value-weight > input {
@@ -127,16 +111,7 @@ a:first-child:hover {
 	float: right;
 }
 
-/* #form2 {
-    background-color: pink;
-    color:red;
-    text-align: center;
-    height: 20px;
-    font-size: 20px;
-} */
-
 #confirm {
-	/*  background-color:violet; */
 	text-align: center;
 	height: 35px;
 	font-size: 20px;
@@ -160,7 +135,6 @@ a:first-child:hover {
 }
 
 #results {
-	/* background-color: teal; */
 	width: auto;
 	height: 35px;
 	font-weight: 500;
