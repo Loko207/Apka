@@ -1,18 +1,21 @@
-function solve(){ 
-    let weight = document.querySelector(".value-weight input").value;
-    let height = document.querySelector(".value-height input").value;
-    let result = weight/(0.01*height)**2;
-    let rounded_result = result.toFixed(2);
-        
-	if (weight>30 && height>120 && weight <300 && height < 250) {
-        document.getElementById("results").innerHTML = ("Twoje BMI wynosi - " + rounded_result);
-        check(rounded_result);
-    } else { 
-        document.getElementById("results").innerHTML="Podano nieprawidłowe dane!";
-        document.querySelector(".interpretation").innerHTML = "Podaj właściwe dane";
-    };
-}
-function check(rounded_result){
+
+    const solve = () => { 
+        let weight = document.querySelector(".value-weight input").value;
+        let height = document.querySelector(".value-height input").value;
+        let result = weight/(0.01*height)**2;
+        let rounded_result = result.toFixed(2);
+    
+        if (weight>30 && height>120 && weight <300 && height < 250) {
+            document.getElementById("results").innerHTML = ("Twoje BMI wynosi - " + rounded_result);
+            check(rounded_result);
+        } else { 
+            document.getElementById("results").innerHTML="Podano nieprawidłowe dane!";
+            document.querySelector(".interpretation").innerHTML = "Podaj właściwe dane";
+        };
+    }
+
+
+const check = (rounded_result) => {
     if (rounded_result < 18.5) {
         document.querySelector(".interpretation").innerHTML = "Wskazuje to na niedowagę. Konieczne jest dożywienie organizmu. Zalecana jest konsultacja z dietetykiem celem zwiększenia masy ciała."
     } else if (18.5 < rounded_result && rounded_result < 25) { 
@@ -30,4 +33,11 @@ function check(rounded_result){
     };
 }
 
+const ent = (e) => {
+    let e1 = e.keyCode;
+    if (e1==13) {
+        solve();
+    }
+};
+document.addEventListener("keypress", ent);
 
